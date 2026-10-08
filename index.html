@@ -47,22 +47,17 @@
   .bouton { display: inline-block; padding: .75rem 1.25rem; border-radius: .375rem; font-weight: 600; }
   .bouton-plein { background: var(--dominante); color: var(--fond); }
   .bouton-contour { border: 2px solid var(--dominante); color: var(--dominante); }
+  .entree { width: 100%; min-height: 3.25rem; align-items: center; display: flex; justify-content: center; gap: .75rem; padding: .875rem 1.25rem; border: 2px solid var(--bord); border-radius: .5rem; background: var(--carte); font-weight: 600; }
+  .entree:hover { border-color: var(--dominante); }
+  .entree span { color: var(--accent); font-variant-numeric: tabular-nums; }
 </style>
 </head>
 
 <body class="font-texte antialiased">
 <a href="#experience" class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:bg-white focus:text-black focus:p-2">Aller au contenu</a>
 
-<header class="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-x-6 gap-y-2 px-6 py-5">
+<header class="mx-auto flex max-w-6xl items-center justify-center px-6 py-5">
   <span class="font-titre text-lg font-bold dominante">LB</span>
-  <nav aria-label="Principale" class="flex flex-wrap gap-x-5 gap-y-1 text-sm font-medium">
-    <a class="lien" href="#projets">Projets</a>
-    <a class="lien" href="#experience">Expérience</a>
-    <a class="lien" href="#formation">Formation</a>
-    <a class="lien" href="#competences">Compétences</a>
-    <a class="lien" href="#langues">Langues</a>
-    <a class="lien" href="#contact">Contact</a>
-  </nav>
 </header>
 
 <main>
@@ -80,6 +75,20 @@
       <a href="cv_cesi_bis.pdf" target="_blank" rel="noopener" class="bouton bouton-plein">Voir mon CV</a>
       <a href="#contact" class="bouton bouton-contour">Me contacter</a>
     </div>
+  </section>
+
+  <section id="sommaire" class="mx-auto max-w-6xl scroll-mt-4 px-6 py-10">
+    <h2 class="font-titre text-center text-3xl font-bold sm:text-4xl">Sommaire</h2>
+    <nav aria-label="Sommaire" class="mt-8">
+      <ol class="mx-auto grid w-full max-w-xs grid-cols-1 gap-3">
+        <li><a class="entree" href="#projets"><span aria-hidden="true">01</span>Projets</a></li>
+        <li><a class="entree" href="#experience"><span aria-hidden="true">02</span>Expériences</a></li>
+        <li><a class="entree" href="#formation"><span aria-hidden="true">03</span>Formation</a></li>
+        <li><a class="entree" href="#competences"><span aria-hidden="true">04</span>Compétences</a></li>
+        <li><a class="entree" href="#langues"><span aria-hidden="true">05</span>Langues</a></li>
+        <li><a class="entree" href="#contact"><span aria-hidden="true">06</span>Contact</a></li>
+      </ol>
+    </nav>
   </section>
 
   <section id="projets" class="mx-auto max-w-6xl scroll-mt-4 px-6 py-16">
