@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="description" content="Lucie Bize, étudiante en école d'ingénieur (CESI Toulouse), recherche un stage en informatique d'avril à août 2027.">
+<title>Lucie Bize – Étudiante ingénieure, stage informatique 2027</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+
+<script src="https://cdn.tailwindcss.com/3.4.17"></script>
+<script>
+  tailwind.config = {
+    theme: { extend: { fontFamily: {
+      titre: ['"Space Grotesk"', 'ui-sans-serif', 'system-ui', '-apple-system', '"Segoe UI"', 'Roboto', 'sans-serif'],
+      texte: ['Inter', 'ui-sans-serif', 'system-ui', '-apple-system', '"Segoe UI"', 'Roboto', 'sans-serif']
+    } } }
+  };
+</script>
+
+<style>
+  /* Deux couleurs : dominante (vert forêt) et accent (rose). Le reste est neutre. */
+  :root {
+    --fond: #f6f8f7;  --carte: #ffffff;  --texte: #17201b;  --discret: #4a5650;
+    --bord: #c3cec7;  --pastille: #e6ece8;
+    --dominante: #14532d;  --accent: #be185d;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --fond: #0e1411;  --carte: #161e19;  --texte: #eef3f0;  --discret: #a9b6af;
+      --bord: #35433b;  --pastille: #212b25;
+      --dominante: #86efac;  --accent: #f9a8d4;
+    }
+  }
+  body { background: var(--fond); color: var(--texte); }
+  .discret { color: var(--discret); }
+  .dominante { color: var(--dominante); }
+  .lien { color: var(--dominante); text-decoration: underline; text-underline-offset: 3px; font-weight: 600; }
+  .lien:hover { text-decoration-thickness: 2px; }
+  :focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+
+  .carte-fixe { background: var(--carte); border: 2px solid var(--bord); }
+  .pastille { background: var(--pastille); color: var(--texte); }
+
+  .bouton { display: inline-block; padding: .75rem 1.25rem; border-radius: .375rem; font-weight: 600; }
+  .bouton-plein { background: var(--dominante); color: var(--fond); }
+  .bouton-contour { border: 2px solid var(--dominante); color: var(--dominante); }
+</style>
+</head>
+
+<body class="font-texte antialiased">
+<a href="#experience" class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:bg-white focus:text-black focus:p-2">Aller au contenu</a>
+
+<header class="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-x-6 gap-y-2 px-6 py-5">
+  <span class="font-titre text-lg font-bold dominante">LB</span>
+  <nav aria-label="Principale" class="flex flex-wrap gap-x-5 gap-y-1 text-sm font-medium">
+    <a class="lien" href="#experience">Expérience</a>
+    <a class="lien" href="#formation">Formation</a>
+    <a class="lien" href="#competences">Compétences</a>
+    <a class="lien" href="#langues">Langues</a>
+    <a class="lien" href="#contact">Contact</a>
+  </nav>
+</header>
+
+<main>
+  <section class="mx-auto flex min-h-[calc(100svh-4.5rem)] max-w-6xl flex-col justify-center px-6 pb-16">
+    <h1 class="font-titre font-bold leading-[0.95] tracking-tight dominante text-[clamp(3.5rem,13vw,10rem)]">
+      Lucie Bize
+    </h1>
+    <p class="mt-8 max-w-2xl font-titre text-2xl font-medium sm:text-3xl">
+      Étudiante en deuxième année d'école d'ingénieur
+    </p>
+    <p class="discret mt-4 max-w-xl text-lg">
+      Je suis à la recherche d'un stage dans le domaine de l'informatique, d'une durée de 8 à 12 semaines, entre début avril et fin août 2027.
+    </p>
+    <div class="mt-10 flex flex-wrap gap-4">
+      <a href="#experience" class="bouton bouton-plein">Voir mon parcours</a>
+      <a href="#contact" class="bouton bouton-contour">Me contacter</a>
+    </div>
+  </section>
+
+  <section id="experience" class="mx-auto max-w-6xl scroll-mt-4 px-6 py-16">
+    <h2 class="font-titre text-3xl font-bold sm:text-4xl">Expérience</h2>
+    <div class="mt-10 grid grid-cols-1 gap-6 md:grid-cols-2">
+
+      <article class="carte-fixe flex flex-col rounded-lg p-6">
+        <h3 class="font-titre text-2xl font-bold">Agent d'accueil</h3>
+        <p class="mt-1 font-medium dominante">Mairie de L'Union, périphérie de Toulouse</p>
+        <p class="discret text-sm">Août à septembre 2026</p>
+        <p class="discret mt-3">Accueil du public, tenue de la caisse et entretien des locaux dans une piscine municipale, à temps plein : passage progressif de l'entretien à des missions en contact avec les usagers.</p>
+      </article>
+
+      <article class="carte-fixe flex flex-col rounded-lg p-6">
+        <h3 class="font-titre text-2xl font-bold">Aide aux devoirs</h3>
+        <p class="mt-1 font-medium dominante">Association Negreneys Curie, Toulouse</p>
+        <p class="discret text-sm">Depuis novembre 2025</p>
+        <p class="discret mt-3">Accompagnement bénévole d'élèves de 6e à 3e dans la réalisation de leurs devoirs, 1 h 30 par semaine.</p>
+      </article>
+
+      <article class="carte-fixe flex flex-col rounded-lg p-6">
+        <h3 class="font-titre text-2xl font-bold">Stage de découverte</h3>
+        <p class="mt-1 font-medium dominante">Coperbee, Lapeyrouse-Fossat</p>
+        <p class="discret text-sm">Une semaine en janvier 2022</p>
+        <p class="discret mt-3">Stage de 3e dans une entreprise de services numériques, experte dans de nombreux domaines tels que la cybersécurité et la gestion de projet.</p>
+      </article>
+
+    </div>
+  </section>
+
+  <section id="formation" class="mx-auto max-w-6xl scroll-mt-4 px-6 py-16">
+    <h2 class="font-titre text-3xl font-bold sm:text-4xl">Formation</h2>
+    <div class="mt-10 grid grid-cols-1 gap-6 md:grid-cols-2">
+
+      <article class="carte-fixe flex flex-col rounded-lg p-6">
+        <h3 class="font-titre text-2xl font-bold">Formation d'ingénieur</h3>
+        <p class="mt-1 font-medium dominante">École d'ingénieur CESI, Toulouse</p>
+        <p class="discret text-sm">Depuis septembre 2025</p>
+        <p class="discret mt-3">Réalisation de nombreux projets, dont la modélisation de bases de données et l'électronique.</p>
+      </article>
+
+      <article class="carte-fixe flex flex-col rounded-lg p-6">
+        <h3 class="font-titre text-2xl font-bold">Baccalauréat</h3>
+        <p class="mt-1 font-medium dominante">Lycée Raymond Naves, Toulouse</p>
+        <p class="discret text-sm">Septembre 2022 à juillet 2025</p>
+        <p class="discret mt-3">Spécialités : Mathématiques et NSI. Option : Maths expertes. Section européenne anglais.</p>
+      </article>
+
+    </div>
+  </section>
+
+  <section id="competences" class="mx-auto max-w-6xl scroll-mt-4 px-6 py-16">
+    <h2 class="font-titre text-3xl font-bold sm:text-4xl">Compétences</h2>
+    <div class="mt-10 grid grid-cols-1 gap-x-10 gap-y-8 sm:grid-cols-2">
+      <div>
+        <h3 class="font-titre text-xl font-bold dominante">Langages</h3>
+        <ul class="mt-3 flex flex-wrap gap-2">
+          <li class="pastille rounded px-2.5 py-1 text-sm font-medium">Python</li>
+          <li class="pastille rounded px-2.5 py-1 text-sm font-medium">C</li>
+          <li class="pastille rounded px-2.5 py-1 text-sm font-medium">HTML</li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="font-titre text-xl font-bold dominante">Outils</h3>
+        <ul class="mt-3 flex flex-wrap gap-2">
+          <li class="pastille rounded px-2.5 py-1 text-sm font-medium">Git et GitHub</li>
+          <li class="pastille rounded px-2.5 py-1 text-sm font-medium">MySQL</li>
+          <li class="pastille rounded px-2.5 py-1 text-sm font-medium">Linux Mint</li>
+          <li class="pastille rounded px-2.5 py-1 text-sm font-medium">Autodesk Fusion</li>
+          <li class="pastille rounded px-2.5 py-1 text-sm font-medium">Autodesk Revit</li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="font-titre text-xl font-bold dominante">Modélisation et bases de données</h3>
+        <ul class="mt-3 flex flex-wrap gap-2">
+          <li class="pastille rounded px-2.5 py-1 text-sm font-medium">Algèbre relationnelle</li>
+          <li class="pastille rounded px-2.5 py-1 text-sm font-medium">Modélisation de bases de données</li>
+          <li class="pastille rounded px-2.5 py-1 text-sm font-medium">Requêtes SQL</li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="font-titre text-xl font-bold dominante">Électronique</h3>
+        <ul class="mt-3 flex flex-wrap gap-2">
+          <li class="pastille rounded px-2.5 py-1 text-sm font-medium">Conception de circuits logiques</li>
+          <li class="pastille rounded px-2.5 py-1 text-sm font-medium">Réalisation de circuits</li>
+          <li class="pastille rounded px-2.5 py-1 text-sm font-medium">Algorithmique</li>
+          <li class="pastille rounded px-2.5 py-1 text-sm font-medium">Programmation Arduino</li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="font-titre text-xl font-bold dominante">Traitement du signal</h3>
+        <ul class="mt-3 flex flex-wrap gap-2">
+          <li class="pastille rounded px-2.5 py-1 text-sm font-medium">Filtres analogiques et numériques</li>
+          <li class="pastille rounded px-2.5 py-1 text-sm font-medium">Échantillonnage</li>
+          <li class="pastille rounded px-2.5 py-1 text-sm font-medium">Programme et environnement d'exécution</li>
+          <li class="pastille rounded px-2.5 py-1 text-sm font-medium">Outils mathématiques du signal</li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="font-titre text-xl font-bold dominante">Matériaux</h3>
+        <ul class="mt-3 flex flex-wrap gap-2">
+          <li class="pastille rounded px-2.5 py-1 text-sm font-medium">Conception d'un bâtiment</li>
+          <li class="pastille rounded px-2.5 py-1 text-sm font-medium">Caractéristiques des matériaux</li>
+          <li class="pastille rounded px-2.5 py-1 text-sm font-medium">Résistance des matériaux</li>
+          <li class="pastille rounded px-2.5 py-1 text-sm font-medium">Dimensionnement de structure</li>
+          <li class="pastille rounded px-2.5 py-1 text-sm font-medium">Dimensionnement thermique</li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="font-titre text-xl font-bold dominante">Industrie</h3>
+        <ul class="mt-3 flex flex-wrap gap-2">
+          <li class="pastille rounded px-2.5 py-1 text-sm font-medium">Analyse fonctionnelle du besoin</li>
+          <li class="pastille rounded px-2.5 py-1 text-sm font-medium">Conception numérique produit</li>
+          <li class="pastille rounded px-2.5 py-1 text-sm font-medium">Gestion de production</li>
+          <li class="pastille rounded px-2.5 py-1 text-sm font-medium">Gestion financière</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="langues" class="mx-auto max-w-6xl scroll-mt-4 px-6 py-16">
+    <h2 class="font-titre text-3xl font-bold sm:text-4xl">Langues</h2>
+    <div class="mt-10 grid grid-cols-1 gap-6 md:grid-cols-3">
+
+      <article class="carte-fixe flex flex-col rounded-lg p-6">
+        <h3 class="font-titre text-2xl font-bold">Français</h3>
+        <p class="mt-1 font-medium dominante">Langue maternelle</p>
+      </article>
+
+      <article class="carte-fixe flex flex-col rounded-lg p-6">
+        <h3 class="font-titre text-2xl font-bold">Anglais</h3>
+        <p class="mt-1 font-medium dominante">Niveau B1</p>
+        <p class="discret mt-2 text-sm">TOEIC Listening &amp; Reading : 620/990</p>
+      </article>
+
+      <article class="carte-fixe flex flex-col rounded-lg p-6">
+        <h3 class="font-titre text-2xl font-bold">Espagnol</h3>
+        <p class="mt-1 font-medium dominante">Niveau A2</p>
+        <p class="discret mt-2 text-sm">Niveau lycée</p>
+      </article>
+
+    </div>
+  </section>
+</main>
+
+<footer id="contact" class="mx-auto max-w-6xl scroll-mt-4 px-6 py-16">
+  <h2 class="font-titre text-3xl font-bold sm:text-4xl">Contact</h2>
+  <p class="discret mt-4 max-w-xl text-lg">Je cherche un stage en informatique à partir d'avril 2027. Écrivez-moi, je réponds rapidement.</p>
+  <p class="mt-6 flex flex-wrap items-center gap-x-8 gap-y-2">
+    <span class="inline-flex items-center gap-2">
+      <a class="lien" href="mailto:lucie.bize28@gmail.com">lucie.bize28@gmail.com</a>
+      <button type="button" id="copier" class="dominante inline-flex h-9 w-9 items-center justify-center rounded" aria-label="Copier l'adresse e-mail" title="Copier l'adresse e-mail">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <rect x="9" y="9" width="12" height="12" rx="2"></rect>
+          <path d="M15 9V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h4"></path>
+        </svg>
+      </button>
+    </span>
+    <a class="lien" href="https://github.com/ciellu26" target="_blank" rel="noopener">GitHub</a>
+    <a class="lien" href="https://www.linkedin.com/in/lucie-b-375a35415/" target="_blank" rel="noopener">LinkedIn</a>
+  </p>
+  <p id="copie-statut" class="discret mt-2 min-h-[1.25rem] text-sm" role="status" aria-live="polite"></p>
+</footer>
+
+<script>
+  document.getElementById('copier').addEventListener('click', async function () {
+    var statut = document.getElementById('copie-statut');
+    try {
+      await navigator.clipboard.writeText('lucie.bize28@gmail.com');
+      statut.textContent = 'Adresse copiée.';
+    } catch (e) {
+      statut.textContent = 'Copie impossible : sélectionnez l\'adresse manuellement.';
+    }
+  });
+</script>
+</body>
+</html>
