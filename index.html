@@ -25,18 +25,19 @@
   :root {
     --fond: #f6f8f7;  --carte: #ffffff;  --texte: #17201b;  --discret: #4a5650;
     --bord: #c3cec7;  --pastille: #e6ece8;
-    --dominante: #14532d;  --accent: #be185d;
+    --dominante: #14532d;  --accent: #be185d;  --vif: #14532d;
   }
   @media (prefers-color-scheme: dark) {
     :root {
       --fond: #0e1411;  --carte: #161e19;  --texte: #eef3f0;  --discret: #a9b6af;
       --bord: #35433b;  --pastille: #212b25;
-      --dominante: #86efac;  --accent: #f9a8d4;
+      --dominante: #86efac;  --accent: #f9a8d4;  --vif: #3ddc84;
     }
   }
   body { background: var(--fond); color: var(--texte); }
   .discret { color: var(--discret); }
   .dominante { color: var(--dominante); }
+  .titre-vif { color: var(--vif); }
   .lien { color: var(--dominante); text-decoration: underline; text-underline-offset: 3px; font-weight: 600; }
   .lien:hover { text-decoration-thickness: 2px; }
   :focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
@@ -45,11 +46,16 @@
   .pastille { background: var(--pastille); color: var(--texte); }
 
   .bouton { display: inline-block; padding: .75rem 1.25rem; border-radius: .375rem; font-weight: 600; }
-  .bouton-plein { background: var(--dominante); color: var(--fond); }
-  .bouton-contour { border: 2px solid var(--dominante); color: var(--dominante); }
-  .entree { width: 100%; min-height: 3.25rem; align-items: center; display: flex; justify-content: center; gap: .75rem; padding: .875rem 1.25rem; border: 2px solid var(--bord); border-radius: .5rem; background: var(--carte); font-weight: 600; }
+  .bouton-plein { background: var(--vif); color: var(--fond); }
+  .bouton-contour { border: 2px solid var(--vif); color: var(--vif); }
+  .entree { width: 100%; min-height: 3.25rem; align-items: center; display: flex; justify-content: flex-start; gap: 1rem; padding: .875rem 1.25rem; border: 2px solid var(--bord); border-radius: .5rem; background: var(--carte); font-weight: 600; }
   .entree:hover { border-color: var(--dominante); }
-  .entree span { color: var(--accent); font-variant-numeric: tabular-nums; }
+  .entree span { color: var(--accent); font-variant-numeric: tabular-nums; flex: none; width: 1.75rem; text-align: left; }
+
+  .haut { position: fixed; right: 1.25rem; bottom: 1.25rem; z-index: 50; display: inline-flex; align-items: center; justify-content: center; width: 3rem; height: 3rem; border-radius: 9999px; background: var(--vif); color: var(--fond); border: 2px solid var(--vif); box-shadow: 0 2px 8px rgba(0,0,0,.25); opacity: 0; visibility: hidden; transform: translateY(.5rem); transition: opacity .2s, transform .2s, visibility .2s; cursor: pointer; }
+  .haut.visible { opacity: 1; visibility: visible; transform: none; }
+  .haut:hover { filter: brightness(1.1); }
+  @media (prefers-reduced-motion: reduce) { .haut { transition: none; } }
 </style>
 </head>
 
@@ -61,17 +67,17 @@
 </header>
 
 <main>
-  <section class="mx-auto flex min-h-[calc(100svh-4.5rem)] max-w-6xl flex-col justify-center px-6 pb-16">
-    <h1 class="font-titre font-bold leading-[0.95] tracking-tight dominante text-[clamp(3.5rem,13vw,10rem)]">
+  <section class="mx-auto flex min-h-[calc(100svh-4.5rem)] max-w-6xl flex-col items-center justify-center px-6 pb-16 text-center">
+    <h1 class="font-titre font-bold leading-[0.95] tracking-tight titre-vif text-[clamp(3.5rem,13vw,10rem)]">
       Lucie Bize
     </h1>
-    <p class="mt-8 max-w-2xl font-titre text-2xl font-medium sm:text-3xl">
+    <p class="mx-auto mt-8 max-w-2xl font-titre text-2xl font-medium sm:text-3xl">
       Étudiante en deuxième année d'école d'ingénieur
     </p>
-    <p class="discret mt-4 max-w-xl text-lg">
+    <p class="discret mx-auto mt-4 max-w-xl text-lg">
       Je suis à la recherche d'un stage dans le domaine de l'informatique, d'une durée de 8 à 12 semaines, entre début avril et fin août 2027, à Toulouse, de préférence au nord-est de l'agglomération.
     </p>
-    <div class="mt-10 flex flex-wrap gap-4">
+    <div class="mt-10 flex flex-wrap justify-center gap-4">
       <a href="cv_cesi_bis.pdf" target="_blank" rel="noopener" class="bouton bouton-plein">Voir mon CV</a>
       <a href="#contact" class="bouton bouton-contour">Me contacter</a>
     </div>
@@ -106,12 +112,33 @@
           <li>Requêtes SQL : jointures, agrégations, requêtes imbriquées, procédures stockées</li>
           <li>Comptes « admin » et « user » avec droits distincts, choix du moteur de stockage et optimisation des requêtes</li>
         </ul>
-        <ul class="mt-4 flex flex-wrap gap-2">
+        <ul class="mt-auto flex flex-wrap gap-2 pt-4">
           <li class="pastille rounded px-2.5 py-1 text-sm font-medium">MySQL</li>
           <li class="pastille rounded px-2.5 py-1 text-sm font-medium">SQL</li>
           <li class="pastille rounded px-2.5 py-1 text-sm font-medium">Looping MCD</li>
           <li class="pastille rounded px-2.5 py-1 text-sm font-medium">MySQL Workbench</li>
           <li class="pastille rounded px-2.5 py-1 text-sm font-medium">Algèbre relationnelle</li>
+        </ul>
+      </article>
+
+      <article class="carte-fixe flex flex-col rounded-lg p-6">
+        <h3 class="font-titre text-2xl font-bold">Analyse d'un signal radioastronomique</h3>
+        <p class="mt-1 font-medium dominante">Projet de groupe (4 personnes), CESI Toulouse</p>
+        <p class="discret mt-3">Étude d'un signal atypique, très bruité, détecté sur la raie des 21 cm par le radiotélescope de Nançay : analyse, filtrage analogique et restitution sonore.</p>
+        <ul class="discret mt-3 list-disc space-y-1 pl-5">
+          <li>Note scientifique illustrée sous Jupyter expliquant la chaîne d'acquisition, du signal électromagnétique au son perçu par l'oreille</li>
+          <li>Première analyse du signal avec Python : FFT et spectrogramme</li>
+          <li>Étude théorique d'un filtre RLC d'ordre 2 : fonction de transfert, fréquences propre et de coupure, diagramme de Bode</li>
+          <li>Dimensionnement des composants et simulation de la réponse en gain et en phase</li>
+          <li>Montage réel (R, L, C), simulation et mesure, puis écoute du signal filtré</li>
+        </ul>
+        <ul class="mt-auto flex flex-wrap gap-2 pt-4">
+          <li class="pastille rounded px-2.5 py-1 text-sm font-medium">Python</li>
+          <li class="pastille rounded px-2.5 py-1 text-sm font-medium">FFT et spectrogramme</li>
+          <li class="pastille rounded px-2.5 py-1 text-sm font-medium">Diagramme de Bode</li>
+          <li class="pastille rounded px-2.5 py-1 text-sm font-medium">Jupyter</li>
+          <li class="pastille rounded px-2.5 py-1 text-sm font-medium">LaTeX et Mermaid</li>
+          <li class="pastille rounded px-2.5 py-1 text-sm font-medium">Vulgarisation scientifique</li>
         </ul>
       </article>
 
@@ -123,9 +150,9 @@
           <li>Carte propre à chaque agent, validée après une combinaison de 4 interrupteurs</li>
           <li>16 types de cartes regroupés en 8 modèles, chacun générant une sortie qui lui est propre</li>
           <li>Calcul de la sortie attendue selon les interrupteurs, puis comparaison avec le signal de la carte</li>
-          <li>Authentification adaptée à l'habilitation de l'agent (pavé numérique, autres contrôles envisagés)</li>
+          <li>Authentification adaptée à l'habilitation de l'agent</li>
         </ul>
-        <ul class="mt-4 flex flex-wrap gap-2">
+        <ul class="mt-auto flex flex-wrap gap-2 pt-4">
           <li class="pastille rounded px-2.5 py-1 text-sm font-medium">Conception de circuits logiques</li>
           <li class="pastille rounded px-2.5 py-1 text-sm font-medium">Composants électroniques de base</li>
           <li class="pastille rounded px-2.5 py-1 text-sm font-medium">Algorithmique</li>
@@ -144,7 +171,7 @@
         <p class="mt-1 font-medium dominante">Mairie de L'Union, périphérie de Toulouse</p>
         <p class="discret text-sm">Août à septembre 2026</p>
         <p class="discret mt-3">Accueil du public, tenue de la caisse et entretien des locaux dans une piscine municipale, à temps plein : passage progressif de l'entretien à des missions en contact avec les usagers.</p>
-        <p class="mt-4 text-sm font-semibold">Compétences transférables</p>
+        <p class="mt-auto pt-4 text-sm font-semibold">Compétences transférables</p>
         <ul class="mt-2 flex flex-wrap gap-2">
           <li class="pastille rounded px-2.5 py-1 text-sm font-medium">Relation avec le public</li>
           <li class="pastille rounded px-2.5 py-1 text-sm font-medium">Rigueur (gestion de la caisse)</li>
@@ -159,7 +186,7 @@
         <p class="mt-1 font-medium dominante">Association Negreneys Curie, Toulouse</p>
         <p class="discret text-sm">Depuis novembre 2025</p>
         <p class="discret mt-3">Accompagnement bénévole d'élèves de 6e à 3e dans la réalisation de leurs devoirs, 1 h 30 par semaine.</p>
-        <p class="mt-4 text-sm font-semibold">Compétences transférables</p>
+        <p class="mt-auto pt-4 text-sm font-semibold">Compétences transférables</p>
         <ul class="mt-2 flex flex-wrap gap-2">
           <li class="pastille rounded px-2.5 py-1 text-sm font-medium">Pédagogie</li>
           <li class="pastille rounded px-2.5 py-1 text-sm font-medium">Patience</li>
@@ -174,7 +201,7 @@
         <p class="discret text-sm">Une semaine en janvier 2022</p>
         <p class="discret mt-3">Stage de 3e dans une entreprise de services numériques, experte dans de nombreux domaines tels que la cybersécurité et la gestion de projet. 
           J'ai assisté à un cours de management et découvert le HTML en construisant un site web à partir de zéro.</p>
-        <p class="mt-4 text-sm font-semibold">Compétences transférables</p>
+        <p class="mt-auto pt-4 text-sm font-semibold">Compétences transférables</p>
         <ul class="mt-2 flex flex-wrap gap-2">
           <li class="pastille rounded px-2.5 py-1 text-sm font-medium">Initiation au HTML</li>
           <li class="pastille rounded px-2.5 py-1 text-sm font-medium">Création d'un site web de A à Z</li>
@@ -203,7 +230,9 @@
         <h3 class="font-titre text-2xl font-bold">Baccalauréat</h3>
         <p class="mt-1 font-medium dominante">Lycée Raymond Naves, Toulouse</p>
         <p class="discret text-sm">Septembre 2022 à juillet 2025</p>
-        <p class="discret mt-3">Spécialités : Mathématiques et NSI. Option : Maths expertes. Section européenne anglais.</p>
+        <p class="discret mt-3">Spécialités : Mathématiques et NSI<br>
+          Option : Maths expertes<br>
+          Section européenne anglais.</p>
       </article>
 
     </div>
@@ -332,21 +361,53 @@
         </svg>
       </button>
     </span>
+    <a class="lien" id="telephone" href="sms:+33766176335" data-numero="07 66 17 63 35">07 66 17 63 35</a>
     <a class="lien" href="https://github.com/ciellu26" target="_blank" rel="noopener">GitHub</a>
     <a class="lien" href="https://www.linkedin.com/in/lucie-b-375a35415/" target="_blank" rel="noopener">LinkedIn</a>
   </p>
   <p id="copie-statut" class="discret mt-2 min-h-[1.25rem] text-sm" role="status" aria-live="polite"></p>
 </footer>
 
+<button type="button" id="haut" class="haut" aria-label="Remonter en haut de la page" title="Remonter en haut">
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M12 19V5"></path>
+    <path d="M5 12l7-7 7 7"></path>
+  </svg>
+</button>
+
 <script>
+  var statut = document.getElementById('copie-statut');
+  var minuteur = null;
+  function afficherStatut(message) {
+    statut.textContent = message;
+    clearTimeout(minuteur);
+    minuteur = setTimeout(function () { statut.textContent = ''; }, 10000);
+  }
+
   document.getElementById('copier').addEventListener('click', async function () {
-    var statut = document.getElementById('copie-statut');
     try {
       await navigator.clipboard.writeText('lucie.bize28@gmail.com');
-      statut.textContent = 'Adresse copiée.';
+      afficherStatut('Adresse copiée.');
     } catch (e) {
-      statut.textContent = 'Copie impossible : sélectionnez l\'adresse manuellement.';
+      afficherStatut('Copie impossible : sélectionnez l\'adresse manuellement.');
     }
+  });
+
+  document.getElementById('telephone').addEventListener('click', function (e) {
+    e.preventDefault();
+    var numero = this.dataset.numero;
+    if (window.confirm('Souhaitez-vous envoyer un message au ' + numero + ' ?')) {
+      window.location.href = this.getAttribute('href');
+    }
+  });
+
+  var haut = document.getElementById('haut');
+  function majHaut() { haut.classList.toggle('visible', window.scrollY > 400); }
+  window.addEventListener('scroll', majHaut, { passive: true });
+  majHaut();
+  haut.addEventListener('click', function () {
+    var reduit = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    window.scrollTo({ top: 0, behavior: reduit ? 'auto' : 'smooth' });
   });
 </script>
 </body>
